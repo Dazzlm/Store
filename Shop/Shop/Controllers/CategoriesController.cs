@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Shop.Data;
 using Shop.Data.Entities;
 
 namespace Shop.Controllers
 {
-    public class CategoriesController : Controller
+	[Authorize(Roles = "Admin")]
+	public class CategoriesController : Controller
     {
         private readonly DataContext _context;
+
 
         public CategoriesController(DataContext context)
         {
@@ -19,8 +22,9 @@ namespace Shop.Controllers
             return View(await _context.Categories.ToListAsync());
         }
 
-        // GET: Countries/Create
-        public IActionResult Create()
+		// GET: Countries/Create
+		
+		public IActionResult Create()
         {
             return View();
         }
