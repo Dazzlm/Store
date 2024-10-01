@@ -167,7 +167,7 @@ namespace Shop.Controllers
                 {
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, "Ya existe un un departamento con el mismo nombre en este pais.");
+                        ModelState.AddModelError(string.Empty, "Ya existe un un departamento con el mismo nombre en este País.");
                     }
                     else
                     {
@@ -352,7 +352,7 @@ namespace Shop.Controllers
 				{
 					if (dbUpdateException.InnerException.Message.Contains("duplicate"))
 					{
-						ModelState.AddModelError(string.Empty, "Ya existe un Departamento con el mismo nombre en este pais.");
+						ModelState.AddModelError(string.Empty, "Ya existe un Departamento con el mismo nombre en este País.");
 					}
 					else
 					{
